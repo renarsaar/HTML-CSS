@@ -1,0 +1,79 @@
+/* NAVIGATION */
+#main-nav .social {
+  display: none;
+}
+
+#main-nav .container {
+  grid-template-columns: 1fr;
+  grid-gap: 1.2rem;
+}
+
+#main-nav ul,
+#main-nav .logo {
+  justify-self: center;
+}
+#main-nav ul li a {
+  padding: 0.5rem;
+}
+
+#showcase .showcase-container {
+  grid-template-columns: 1fr;
+}
+
+/* HOME ARTICLES */
+#home-articles .articles-container {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#home-articles .articles-container > *:first-child, 
+#home-articles .articles-container > *:last-child {
+  grid-template-columns: repeat(1, 1fr);
+  grid-column: 1; /* = 1 so the card starts from the left */
+}
+
+/* FOOTER */
+#main-footer .footer-container {
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 2rem;
+}
+#main-footer .footer-container > *:last-child {
+  grid-column: 1 / span 2;
+}
+
+/* ABOUT PAGE */
+.page-container {
+  grid-template-columns: 1fr;
+}
+.page-container > *:first-child { /* Card = Joinourclub */
+  grid-row: 1;
+}
+
+
+
+/* SMARTPHONES */
+@media (max-width: 600px) {
+ /* Stack grid items (1fr) */
+
+ #showcase .showcase-container,
+ #home-articles .articles-container{
+   grid-template-columns: 1fr;
+}
+
+ #main-footer .footer-container {
+  grid-template-columns: 1fr;
+  margin: 0 2rem;
+  text-align: center;
+}
+  #main-footer .footer-container div {
+    padding-bottom: 1.7rem;
+    border-bottom: 1px solid #fff;
+}
+  .list li {
+    border-bottom: none;
+}
+  #main-footer .footer-container > *:last-child {
+    grid-column: 1;
+    border-bottom: none;
+}
+
+}
