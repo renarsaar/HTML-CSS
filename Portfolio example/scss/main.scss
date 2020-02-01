@@ -1,0 +1,407 @@
+// Variables
+$website-width: 1280px;
+$main-color: #ffbc00;
+$light-color: #f4f4f4;
+$dark-color: #333333;
+$medium-color: #ccc;
+$bg-image: url("../img/showcase.jpg"); //Start point from main.css
+
+// Function = Set text color
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// _utilities.scss
+@import "utilities";
+
+// _work_grid.scss / Work.html scss file
+@import "work_grid";
+
+// Core styling
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway" sans-serif;
+  line-height: 1.6;
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+img {
+  width: 100%;
+}
+
+// Main-nav logo
+#logo {
+  display: flex;
+  font-size: 1.4rem;
+  align-items: center;
+  font-family: Allura, cursive;
+  color: #fff;
+}
+
+// Main-nav
+#main-nav {
+  display: flex;
+  justify-content: space-between; // 2 items= logo and ul
+  padding-top: 1rem;
+  ul {
+    display: flex; // Nav items
+  }
+  li {
+    padding: 1rem 1.5rem;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 3px transparent solid; // Hover effect
+    padding-bottom: 0.5rem;
+    transition: border-color 0.5s; // On hover effect
+    &:hover {
+      border-color: $medium-color;
+    }
+    &.current {
+      border-color: $main-color;
+    }
+  }
+}
+
+// Header
+#header {
+  &-home {
+    background: $bg-image fixed center center/cover;
+    height: 100vh;
+    color: #fff;
+
+    .header-content {
+      text-align: center;
+      padding-top: 2rem;
+
+      h1 {
+        padding-top: 3rem;
+        font-size: 4rem;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  &-inner {
+    // Header inner / About page
+    background: $bg-image no-repeat center 40% / cover;
+    height: 5.5rem;
+    color: #fff;
+    border-bottom: 3px solid $main-color;
+  }
+}
+
+// Home page sections
+#home {
+  &-section-top {
+    .specials {
+      margin-top: 3rem;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(4, 1fr);
+
+      .fas {
+        color: $main-color;
+        padding-bottom: 0.4rem;
+      }
+    }
+  }
+
+  &-section-middle {
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      li {
+        line-height: 2;
+
+        &.stats-title {
+          font-size: 1.5rem;
+        }
+
+        &.stats-number {
+          font-size: 2rem;
+          font-weight: bold;
+        }
+      }
+      div {
+        padding: 3rem 0;
+
+        &:nth-child(odd) {
+          background-color: $light-color;
+        }
+        &:nth-child(even) {
+          background-color: $medium-color;
+        }
+      }
+    }
+  }
+
+  &-section-bottom {
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.5rem;
+      text-align: center;
+
+      &-icon {
+        // Icon fa's
+        border-radius: 50%;
+        background: $dark-color;
+        color: set-text-color($dark-color);
+        padding: 2rem;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+        position: relative;
+        transition: all 1s;
+
+        &:hover {
+          width: 100px;
+          height: 100px;
+          line-height: 100px;
+          background-color: $main-color;
+          color: $light-color;
+          transition: all 1s;
+
+          .process-step {
+            background: $dark-color;
+            color: set-text-color($dark-color);
+          }
+        }
+      }
+
+      &-step {
+        // Step nr on top of icon
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 2rem;
+        background: $main-color;
+        color: set-text-color($main-color);
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+        line-height: 15px;
+        padding: 1rem;
+        transition: all 1s;
+      }
+    }
+  }
+}
+
+//About page sections
+#about {
+  &-section-top {
+    // Section top
+    .about-info {
+      display: grid;
+      grid-template-areas:
+        "bio-image bio bio"
+        "award-1 award-2 award-3";
+      grid-gap: 1.2rem;
+
+      // Grid area
+      .bio-image {
+        grid-area: bio-image;
+      }
+      .bio {
+        grid-area: bio;
+        border-left: 3px solid $main-color;
+        padding: 0.8rem;
+      }
+      .award-1 {
+        grid-area: award-1;
+      }
+      .award-2 {
+        grid-area: award-2;
+      }
+      .award-3 {
+        grid-area: award-3;
+      }
+      .award-1 .fas,
+      .award-2 .fas,
+      .award-3 .fas {
+        color: $main-color;
+        margin: 1rem;
+      }
+    }
+  }
+
+  &-section-middle {
+    // Section middle / Progress bars
+    .progress {
+      overflow: hidden;
+      height: 20px;
+      background: $medium-color; // Empty progress bar
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+
+      div {
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        background: $main-color;
+      }
+    }
+  }
+
+  &-section-bottom-logos {
+    // Section bottom, logos
+    .about-logos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 2rem;
+
+      img {
+        width: 70%;
+      }
+    }
+  }
+
+  &-section-bottom-testimonials {
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0.5rem;
+
+      ul {
+        list-style: none;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      p {
+        border: 1px solid $medium-color;
+        border-radius: 5px;
+        padding: 0.5rem;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+// Work page sections in _work_grid.scss
+
+// Contact page sections
+
+#contact {
+  &-section-top {
+    .text-fields {
+      display: grid;
+      grid-template-areas:
+        "name email"
+        "subject phone"
+        "message message";
+      grid-gap: 1.2rem;
+      margin-bottom: 1.2rem;
+
+      .name-input {
+        grid-area: name;
+      }
+      .subject-input {
+        grid-area: subject;
+      }
+      .email-input {
+        grid-area: email;
+      }
+      .phone-input {
+        grid-area: phone;
+      }
+      .message-input {
+        grid-area: message;
+        height: 100px;
+      }
+      .text-input {
+        padding: 0.5rem 1rem;
+      }
+    }
+    button[type="submit"] {
+      width: 50%;
+    }
+  }
+
+  &-section-middle {
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+    }
+  }
+
+  &-section-bottom {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+}
+
+// Footer
+#main-footer {
+  background: $dark-color;
+  color: #fff;
+  height: 5rem;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    height: inherit;
+    align-items: center;
+  }
+
+  .social .fab {
+    margin-right: 1rem;
+    border: 2px #fff solid;
+    border-radius: 50%;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    padding: 0.5rem;
+
+    &:hover {
+      background: $main-color;
+      transition: all 0.4s;
+    }
+  }
+}
+
+// Media queries
+@import "media";
