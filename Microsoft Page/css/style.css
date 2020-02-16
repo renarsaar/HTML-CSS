@@ -1,0 +1,354 @@
+:root {
+  --link-color: #1122ff;
+  --dark-color: #333;
+  --medium-color: #ddd;
+  --light-color: #f3f3f3;
+  --page-width: 1180px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--light-color);
+  font-family: "Raleway", sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+li {
+  list-style: none;
+  display: inline;
+}
+
+.head {
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.lead {
+  margin-top: 1rem;
+}
+
+.btn-dark {
+  background: var(--dark-color);
+  color: var(--light-color);
+  padding: 0.6rem 1rem;
+  margin-top: 1.4rem;
+  font-weight: 500;
+}
+
+.btn-light {
+  background: var(--light-color);
+  color: var(--dark-color);
+  padding: 0.6rem 1rem;
+  margin-top: 1.4rem;
+  font-weight: 500;
+}
+
+.btn-link {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: var(--link-color);
+  margin-top: 2rem;
+}
+
+.btn-dark:hover,
+.btn-light:hover,
+.btn-link:hover {
+  opacity: 0.9;
+}
+
+.btn-link:hover .fa-chevron-right {
+  padding-left: 0.3rem;
+}
+
+.container {
+  max-width: var(--page-width);
+  margin: auto;
+}
+
+.menu-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 2;
+  display: none;
+}
+
+/* NAV */
+#nav {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* NAV-MENU */
+#nav .nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#nav .nav-menu .nav-menu-logo img {
+  width: 175px;
+  height: 35px;
+  margin-right: 1.6rem;
+}
+
+#nav .nav-menu .nav-menu-list li {
+  padding: 0 0.4rem;
+}
+
+#nav .nav-menu .nav-menu-list li:hover {
+  border-bottom: 2px solid var(--dark-color);
+  padding-bottom: 0.2rem;
+}
+
+/* NAV-ICONS */
+#nav .nav-icons .icons {
+  padding: 0 0.3rem;
+}
+
+#nav .nav-icons .fas {
+  font-size: 1.3rem;
+}
+
+#nav .nav-icons .fa-chevron-down {
+  padding-left: 0.5rem;
+}
+
+#nav .nav-icons li:first-child:hover {
+  border-bottom: 2px solid var(--dark-color);
+  padding-bottom: 0.2rem;
+}
+
+#nav .nav-icons .fa-search {
+  margin-left: 1.5rem;
+}
+
+/* SECTION-TOP */
+#section-top {
+  background: url("../img/section1.jpg") no-repeat center 70% / cover;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#section-top .top-item {
+  text-align: center;
+  color: var(--dark-color);
+}
+#section-top .top-item p {
+  margin-bottom: 1.7rem;
+}
+
+/* SECTION-TOP-CARD */
+#section-top-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  margin: 2rem 0;
+}
+
+#section-top-card img {
+  width: 100%;
+}
+
+/* SECTION-MIDDLE */
+#section-middle {
+  background: url("../img/section2-1.jpg") no-repeat center 35% / cover;
+  height: 60vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#section-middle .middle-item {
+  display: block;
+  color: var(--dark-color);
+  margin-left: 2.5rem;
+  margin-top: 3.5rem;
+  width: 390px;
+}
+
+#section-middle .middle-item p {
+  margin-bottom: 1.7rem;
+}
+
+/* SECTION-MIDDLE-CARD */
+#section-middle-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  margin: 2rem auto;
+}
+
+#section-middle-card img {
+  width: 100%;
+}
+
+/* SECTION-BOTTOM */
+#section-bottom {
+  background: url("../img/section3-1.jpg") no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#section-bottom .bottom-item {
+  display: block;
+  color: var(--light-color);
+  margin-left: 2.5rem;
+  margin-top: 4rem;
+  width: 550px;
+}
+
+#section-bottom .bottom-item p {
+  margin-bottom: 1.7rem;
+}
+
+/* SECTION-BOTTOM-SOCIAL */
+#section-bottom-social {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+#section-bottom-social div {
+  margin: 0 0.6rem;
+}
+
+#section-bottom-social .fa-facebook-f {
+  background-color: #3b5998;
+  color: var(--light-color);
+  padding: 0.5rem 0.6rem;
+}
+
+#section-bottom-social .fa-twitter {
+  background-color: #00acee;
+  color: var(--light-color);
+  padding: 0.5rem;
+}
+
+#section-bottom-social .fa-linkedin {
+  background-color: #0072b1;
+  color: var(--light-color);
+  padding: 0.5rem;
+}
+
+/* SECTION-LINKS */
+#links {
+  font-size: 0.8rem;
+  background-color: var(--medium-color);
+  color: var(--dark-color);
+  padding: 1.3rem 0;
+}
+
+#links .link-items {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 2rem;
+  justify-content: center;
+}
+
+#links .link-items ul li {
+  display: block;
+  line-height: 2.6;
+}
+
+/* FOOTER */
+#footer {
+  font-size: 0.8rem;
+  background-color: var(--medium-color);
+  color: var(--dark-color);
+  padding: 2rem 0;
+}
+
+#footer .footer-items {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+#footer .footer-items li {
+  padding: 0 0.5rem;
+}
+
+#footer .footer-items .fa-globe {
+  padding: 0 0.5rem;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 700px) {
+  .container {
+    margin: 0 1rem;
+  }
+
+  #nav {
+    margin-top: 1rem;
+    display: block;
+  }
+
+  #section-top-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #section-middle .middle-item {
+    color: var(--light-color);
+    margin-top: 17rem;
+  }
+  #section-middle-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #section-bottom .bottom-item {
+    margin-top: 12rem;
+  }
+  #links .link-items {
+    margin: 0 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .middle-item p {
+    display: none;
+  }
+  .bottom-item p {
+    display: none;
+  }
+  .fa-chevron-down {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  #section-top-card {
+    grid-template-columns: 1fr;
+  }
+
+  #section-middle-card {
+    grid-template-columns: 1fr;
+  }
+  #links .link-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
